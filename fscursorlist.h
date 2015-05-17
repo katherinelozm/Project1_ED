@@ -19,7 +19,7 @@ class FSCursorList : public TDAList{
     virtual bool insert(Object*, int) ;
     virtual int indexOf(Object*)const ;
     virtual Object* get(unsigned)const ;
-    virtual bool erase(unsigned) ;
+    virtual Object* erase(unsigned) ;
     virtual int prev(int) const ;
     virtual int next(int) const ;
     virtual void reset() ;
