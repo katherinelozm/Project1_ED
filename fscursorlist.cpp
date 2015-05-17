@@ -15,7 +15,7 @@ FSCursorList::FSCursorList(int capacity){
 }
 
 FSCursorList::~FSCursorList(){
-
+	delete rows;
 }
 bool FSCursorList::insert(Object* E, int p){
 	if(p<0||p>size){
@@ -48,10 +48,12 @@ bool FSCursorList::insert(Object* E, int p){
 }
 
 int FSCursorList::indexOf(Object* E)const{
+	int tmp = head;
 	for(int i=0; i<size;i++){
-		if(E == rows[i]){
+		if(rows[tmp].data==E){
 			return i;
 		}
+		tmp = data[tmp].next;
 	}
 	return -1;
 }
@@ -125,7 +127,11 @@ Object* FSCursorList::last()const{
 	return rows[tmp].data;
 }
 void FSCursorList::print()const{
-	
+	int tmp = head;
+	for(int i = 0; i< size;i++){
+		rows[tmp].data->print();
+		tmp = rows[tmp].next;
+	}
 }
 bool FSCursorList::isFull()const{
 	if(size==capacity){
