@@ -67,26 +67,40 @@ Object* FSCursorList::get(unsigned p)const{
 }
 
 Object* FSCursorList::erase(unsigned p){
-	if (p<0 || p>=size){
+	if (p<0 || p>size){
 		return NULL;
 	}
-	Object* E = rows[p].data;
+	Object* E = NULL;
 	if (p == size-1){
-		rows[p].data = NULL;
-	} else if (p == 0){
-		head = rows[p].next;
+		if(size==1 && p==0){
+			E = rows[0].data;
+			rows[0].data=NULL;
+			head=-1;
+		}else{
+			E = rows[p].data;
+			rows[p].data = NULL;
+			rows[p-1].next = -1;
+		}
+		size--;
+	} else if (p == 0 && head!=-1){
+		E = rows[head].data;
+		rows[head].data = NULL;
+		
+		head = rows[head].next;
 		rows[p].next = -1;
-		rows[p].data = NULL;
-	} else {
+		
+		size--;
+	} else if(p<size){
 		int temp = head;
-		for (int i = 0; i < p; i++){
+		for (int i = 1; i < p; i++){
 			temp = rows[temp].next;
 		}
-		rows[temp].next = rows[p].next;
-		rows[p].next = -1;
-		rows[p].data = NULL;
+		int n = rows[temp].next;
+		E = rows[n].data;
+		rows[n].data = NULL;
+		rows[temp].next = rows[n].next;
+		size--;
 	}
-	size--;
 	return E;
 }
 
