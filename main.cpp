@@ -15,40 +15,44 @@ int main(int argc, char *argv[]){
   TDAList* lista = new FSArrayList(1000);
   TDAList* lista2 = new LinkedList();
   TDAList* lista3 = new FSCursorList(1000);
-  cout << endl << endl << endl << "INSERT" << endl << endl << endl;
-  for (int i = 0; i < 1000; i++){
+  int val_ = 1000 + rand() % 1000;
+  lista->insert(new Integer(val_), 0);
+  lista2->insert(new Integer(val_), 0);
+  lista3->insert(new Integer(val_), 0);
+  /*cout << endl << endl << endl << "INSERT" << endl << endl << endl;
+  for (int i = 0; i < 999; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
     t = clock();
     lista->insert(new Integer(val), rand() % lista->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    //printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl;
-  for (int i = 0; i < 1000; i++){
+  for (int i = 0; i < 999; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
     t = clock();
     lista2->insert(new Integer(val), rand() % lista2->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    //printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
-  cout << endl << endl << endl;
-  for (int i = 0; i < 1000; i++){
+  cout << endl << endl << endl;*/
+  for (int i = 0; i < 999; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
     t = clock();
     lista3->insert(new Integer(val), rand() % lista3->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    //printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl << "ERASE" << endl << endl << endl;
-  for (int i = 0; i < 1000; i++){
+  /*for (int i = 0; i < 1000; i++){
     clock_t t;
     t = clock();
     lista->erase(rand() % lista->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl;
   for (int i = 0; i < 1000; i++){
@@ -56,7 +60,7 @@ int main(int argc, char *argv[]){
     t = clock();
     lista2->erase(rand() % lista2->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl;
   for (int i = 0; i < 1000; i++){
@@ -64,7 +68,7 @@ int main(int argc, char *argv[]){
     t = clock();
     lista3->erase(rand() % lista3->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl << "GET" << endl << endl << endl;
   for (int i = 0; i < 1000; i++){
@@ -72,7 +76,7 @@ int main(int argc, char *argv[]){
     t = clock();
     lista->get(rand() % lista->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl;
   for (int i = 0; i < 1000; i++){
@@ -80,17 +84,17 @@ int main(int argc, char *argv[]){
     t = clock();
     lista2->get(rand() % lista2->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    //printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
   }
-  cout << endl << endl << endl;
+  cout << endl << endl << endl;*/
   for (int i = 0; i < 1000; i++){
     clock_t t;
     t = clock();
     lista3->get(rand() % lista3->getSize());
     t = clock() - t;
-    printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
+    printf ("%f\n",((float)t)/CLOCKS_PER_SEC);
   }
-  cout << endl << endl << endl << "INDEXOF" << endl << endl << endl;
+  /*cout << endl << endl << endl << "INDEXOF" << endl << endl << endl;
   for (int i = 0; i < 1000; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
@@ -121,7 +125,11 @@ int main(int argc, char *argv[]){
   lista = new FSArrayList(1000);
   lista2 = new LinkedList();
   lista3 = new FSCursorList(1000);
-  for (int i = 0; i < 1000; i++){
+  val_ = 1000 + rand() % 1000;
+  lista->insert(new Integer(val_), 0);
+  lista2->insert(new Integer(val_), 0);
+  lista3->insert(new Integer(val_), 0);
+  for (int i = 0; i < 999; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
     lista->insert(new Integer(val), 0);
@@ -131,7 +139,7 @@ int main(int argc, char *argv[]){
     printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl;
-  for (int i = 0; i < 1000; i++){
+  for (int i = 0; i < 999; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
     lista2->insert(new Integer(val), 0);
@@ -141,7 +149,7 @@ int main(int argc, char *argv[]){
     printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
   }
   cout << endl << endl << endl;
-  for (int i = 0; i < 1000; i++){
+  for (int i = 0; i < 999; i++){
     clock_t t;
     int val = 1000 + rand() % 1000;
     lista3->insert(new Integer(val), 0);
@@ -176,7 +184,7 @@ int main(int argc, char *argv[]){
     lista3->last();
     t = clock() - t;
     printf ("(%f seconds).\n",((float)t)/CLOCKS_PER_SEC);
-  }
+  }*/
   delete lista;
   delete lista2;
   delete lista3;
