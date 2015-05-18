@@ -42,23 +42,22 @@ Object* FSArrayList::get(unsigned index)const {
     return data[index];
 }
 
-bool FSArrayList::erase(unsigned pos) {
+Object* FSArrayList::erase(unsigned pos) {
     if (pos < 0 || pos > size){
         return false;
     }
+    Object* E = data[pos];
     if (pos == size - 1){
         data[pos] = NULL;
         size--;
-        return true;
     } else {
         for (int i = pos; i < size-1; i++){
             data[i] =  data[i+1];
         }
         data[size-1] = NULL;
         size--;
-        return true;
     }
-    return false;
+    return E;
 }
 
 int FSArrayList::prev(int pos) const {

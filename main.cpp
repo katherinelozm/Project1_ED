@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "tdalist.h"
-#include "linkedlist.h"
+#include "fscursorlist.h"
 #include "integer.h"
 
 using namespace std;
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 {
     // En el caso de que quisieramos utilizar otra implementación
     // SÓLO se tendría que cambiar esta línea.
-    TDAList* lista = new LinkedList();
+    TDAList* lista = new FSCursorList(10);
     Integer* intTemp;
     int val, pos;
     bool flag = true;
