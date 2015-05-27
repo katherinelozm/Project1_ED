@@ -106,8 +106,8 @@ Object* LinkedList::erase(unsigned pos) {
     // Si es una posición Inválida
     if (pos < 0 || pos >= size)
         return NULL; // Indicar fracaso en la operación
-    DLLNode* tmp;
-    for (int i=1; i<=pos; i++)
+    DLLNode* tmp = head;
+    for (int i=0; i<=pos; i++)
            tmp = tmp->getNext();
     Object* E = tmp->getData();
     if (pos == 0){ // Desea Borrar la Cabeza
@@ -122,7 +122,7 @@ Object* LinkedList::erase(unsigned pos) {
     }else if (pos == size - 1){ // Desea Borrar el último
         // Recorrer hasta el final
         tmp = head;
-        for (int i=1; i<pos; i++)
+        for (int i=0; i<pos-1; i++)
            tmp = tmp->getNext();
         // Desenlazar
         DLLNode* toErase = tmp->getNext();
@@ -133,7 +133,7 @@ Object* LinkedList::erase(unsigned pos) {
     }else { // Desea Borrar de enmedio
         // Recorrer hasta el nodo anterior al que se desea borrar
         tmp = head;
-        for (int i=1; i<pos; i++)
+        for (int i=0; i<pos-1; i++)
            tmp = tmp->getNext();
         // Desenlazar
         DLLNode* toErase = tmp->getNext();
@@ -178,7 +178,7 @@ Object* LinkedList::last()const {
     if (!head)
         return NULL;
     DLLNode* tmp = head;
-    for (int i=0; i < size; i++)
+    for (int i=0; i < size-1; i++)
         tmp = tmp->getNext();
     return tmp->getData();
 }
